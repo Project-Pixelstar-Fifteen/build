@@ -304,6 +304,7 @@ python_defaults {
     // TODO (b/140144201) Build imgdiff from releasetools_common
     required: [
         "aapt2",
+        "apexer",
         "boot_signer",
         "brotli",
         "bsdiff",
@@ -313,6 +314,7 @@ python_defaults {
         "signapk",
         "toybox",
         "unpack_bootimg",
+        "zipalign",
     ],
 }
 
