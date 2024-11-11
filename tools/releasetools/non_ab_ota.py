@@ -214,6 +214,17 @@ else if get_stage("%(bcb_dev)s") == "3/3" then
   # Dump fingerprints
   script.Print("Target: {}".format(target_info.fingerprint))
 
+  # Pixelstar Versioning
+  android_version = target_info.GetBuildProp("ro.build.version.release")
+  build_id = target_info.GetBuildProp("ro.build.id")
+  build_date = target_info.GetBuildProp("ro.pixelstar.build.date")
+  security_patch = target_info.GetBuildProp("ro.build.version.security_patch")
+  device = target_info.GetBuildProp("ro.pixelstar.device")
+  build_type = target_info.GetBuildProp("ro.build.type")
+  release_tag = target_info.GetBuildProp("ro.system.build.tags")
+  script.pixelstarBanner(android_version, build_id, build_date,
+                                  security_patch, device, build_type, release_tag)
+
   script.AppendExtra("ifelse(is_mounted(\"/system\"), unmount(\"/system\"));")
   device_specific.FullOTA_InstallBegin()
 

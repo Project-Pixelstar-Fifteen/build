@@ -284,6 +284,22 @@ class EdifyGenerator(object):
     """Log a message to the screen (if the logs are visible)."""
     self.script.append('ui_print("%s");' % (message,))
 
+  # Pixelstar Versioning
+  def pixelstarBanner(self, android_version, build_id, build_date,
+                                  security_patch, device, build_type, release_tag):
+    self.Print("----------------------------------------------")
+    self.Print("               Project Pixelstar              ")
+    self.Print("               BY: Team Pixelstar             ")
+    self.Print("----------------------------------------------")
+    self.Print(" Android version: %s"%(android_version))
+    self.Print(" Build id: %s"%(build_id))
+    self.Print(" Build date: %s"%(build_date))
+    self.Print(" Security patch: %s"%(security_patch))
+    self.Print(" Device: %s"%(device))
+    self.Print(" Build type: %s"%(build_type))
+    self.Print(" Release tag: %s"%(release_tag))
+    self.Print("----------------------------------------------")
+
   def TunePartition(self, partition, *options):
     fstab = self.fstab
     if fstab:
