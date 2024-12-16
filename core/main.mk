@@ -208,7 +208,7 @@ endif
 
 BUILD_WITHOUT_PV := true
 
-ifneq ($(PIXELAGE_BUILD),)
+ifneq ($(PIXELSTAR_BUILD),)
 # ------------------------------------------------------------
 # Include vendor specific additions to build properties
 -include vendor/pixelage/build/core/main.mk

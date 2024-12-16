@@ -453,8 +453,8 @@ endif
 # See envsetup.mk for a description of SCAN_EXCLUDE_DIRS
 FIND_LEAVES_EXCLUDES := $(addprefix --prune=, $(SCAN_EXCLUDE_DIRS) .repo .git)
 
-ifneq ($(PIXELAGE_BUILD),)
-include vendor/pixelage/config/BoardConfigPixelage.mk
+ifneq ($(PIXELSTAR_BUILD),)
+include vendor/pixelstar/config/BoardConfigPixelstar.mk
 endif
 
 # The build system exposes several variables for where to find the kernel
@@ -1289,7 +1289,7 @@ include $(BUILD_SYSTEM)/sysprop_config.mk
 # consistency with those defined in BoardConfig.mk files.
 include $(BUILD_SYSTEM)/android_soong_config_vars.mk
 
-ifneq ($(PIXELAGE_BUILD),)
+ifneq ($(PIXELSTAR_BUILD),)
 ifneq ($(wildcard device/lineage/sepolicy/common/sepolicy.mk),)
 ## We need to be sure the global selinux policies are included
 ## last, to avoid accidental resetting by device configs
@@ -1319,7 +1319,7 @@ SOONG_EXTRA_VARIABLES :=
 DEFAULT_DATA_OUT_MODULES := ltp $(ltp_packages)
 .KATI_READONLY := DEFAULT_DATA_OUT_MODULES
 
-ifneq ($(PIXELAGE_BUILD),)
+ifneq ($(PIXELSTAR_BUILD),)
 # Include any vendor specific config.mk file
 -include vendor/*/build/core/config.mk
 endif
